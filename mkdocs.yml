@@ -5,6 +5,9 @@ docs_dir: pages
 site_author: ImranR98
 edit_uri: https://github.com/ImranR98/Obtainium-Wiki/edit/main/pages/
 
+extra_javascript:
+  - assets/analytics.js
+
 nav:
   - Home: index.md
   - Introduction: intro.md
