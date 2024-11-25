@@ -1,16 +1,3 @@
-/* Download badges styling */
-
-.md-content img[alt*="Get it on"] {
-    height: 75px !important;
-    margin: 10px;
-    vertical-align: middle;
-    transition: transform 0.2s ease;
-}
-
-.md-content img[alt*="Get it on"]:hover {
-    transform: scale(1.05);
-}
-
 /* Copyright section styling */
 
 .md-copyright {
