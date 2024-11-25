@@ -7,6 +7,7 @@ edit_uri: https://github.com/ImranR98/Obtainium-Wiki/edit/main/pages/
 
 nav:
   - Home: index.md
+  - Introduction: intro.md
   - UI Overview: ui_overview.md
   - How Apps are Tracked: app_tracking.md
   - App Sources: sources.md

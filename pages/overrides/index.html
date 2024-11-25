@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  .md-content__inner {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .landing {
+    padding: 2rem;
+  }
+
+  .landing-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .main-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .screenshots img {
+    max-width: 10rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--md-shadow-z2);
+  }
+
+  .download-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .md-download-badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .md-download-badge {
+    height: 75px !important;
+    margin: 10px;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+  }
+
+  .md-download-badge:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+</style>
+
+<section class="landing">
+  <div class="landing-title">
+    <img class="main-icon" src="/assets/logo.png" alt="Obtainium Logo">
+    <div>
+      <h1>Obtainium</h1>
+      <p>Get Android App Updates Directly From the Source</p>
+      <a href="/intro.md" class="md-button">
+        Read the Wiki →
+      </a>
+    </div>
+  </div>
+
+  <div class="md-container md-typeset" style="margin-top: 2rem">
+    <div class="md-grid">
+      <div class="md-content" data-md-component="content">
+        <p class="md-typeset__description">
+          Obtainium allows you to install and update apps directly from their release pages, and receive notifications
+          when new releases are made available.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="screenshots">
+    <a href="https://github.com/ImranR98/Obtainium/blob/main/assets/screenshots/1.apps.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/screenshots/1.apps.png"
+        alt="Apps Page">
+    </a>
+    <a href="https://github.com/ImranR98/Obtainium/blob/main/assets/screenshots/4.app.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/screenshots/4.app.png" alt="App Page">
+    </a>
+    <a href="https://github.com/ImranR98/Obtainium/blob/main/assets/screenshots/2.dark_theme.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/screenshots/2.dark_theme.png"
+        alt="Dark Theme">
+    </a>
+  </div>
+
+  <div class="md-container md-typeset" style="margin-top: 2rem">
+    <div class="md-grid">
+      <div class="md-content" data-md-component="content">
+        <p class="md-typeset__description">
+          The app supports over a dozen
+          <a href="/sources/">source websites</a>,
+          including GitHub, GitLab, and F-Droid.
+          Each source can be configured with various filters and settings to account for different release schemes,
+          edge cases, and user preferences. For everything else,
+          <a href="/sources/#html">generic "HTML" source</a>
+          can be customized to find and extract APK info.
+        </p>
+        <p class="md-typeset__description">
+          It also provides a way to import/export data and
+          <a href="https://apps.obtainium.imranr.dev/">share app configurations</a>
+          with other users.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-buttons">
+    <a href="https://github.com/ImranR98/Obtainium/releases/latest" class="md-button md-button--primary"
+      id="downloadUniversal">
+      Download Universal APK
+    </a>
+    <a href="https://github.com/ImranR98/Obtainium/releases/latest" class="md-button" id="downloadArm64">
+      ARM64
+    </a>
+    <a href="https://github.com/ImranR98/Obtainium/releases/latest" class="md-button" id="downloadArm7">
+      ARMv7
+    </a>
+    <a href="https://github.com/ImranR98/Obtainium/releases/latest" class="md-button" id="downloadX64">
+      x64
+    </a>
+  </div>
+
+  <div class="md-container md-typeset" style="margin-top: 2rem">
+    <div class="md-grid">
+      <div class="md-content" data-md-component="content">
+        <div class="md-download-badges">
+          <a href="https://github.com/ImranR98/Obtainium/releases" class="md-typeset__link">
+            <img src="/assets/badge_github.png" alt="Get it on GitHub" class="md-download-badge">
+          </a>
+          <a href="https://apt.izzysoft.de/fdroid/index/apk/dev.imranr.obtainium" class="md-typeset__link">
+            <img src="/assets/badge_izzyondroid.png" alt="Get it on IzzyOnDroid" class="md-download-badge">
+          </a>
+          <a href="https://f-droid.org/packages/dev.imranr.obtainium.fdroid/" class="md-typeset__link">
+            <img src="/assets/badge_fdroid.png" alt="Get it on F-Droid" class="md-download-badge">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="md-typeset__verification">
+    <details>
+      <summary>Verification Details</summary>
+      <ul class="md-typeset__list">
+        <li>Package ID: <code>dev.imranr.obtainium</code></li>
+        <li>SHA-256:
+          <code>B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62</code>
+        </li>
+        <li>Note: The above signature is also valid for the F-Droid flavour of Obtainium, thanks to (<a
+            href="https://f-droid.org/docs/Reproducible_Builds/">reproducible builds</a>)</li>
+        <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=contact%40imranr.dev&fingerprint=on&op=index">PGP
+            Public Key</a> (to verify APK hashes)</li>
+      </ul>
+    </details>
+  </div>
+
+</section>
+
+<script>
+  window.addEventListener('load', async () => {
+    const response = await fetch('https://api.github.com/repos/ImranR98/Obtainium/releases/latest');
+    const { tag_name } = await response.json();
+
+    document.getElementById('downloadUniversal').href = `https://github.com/ImranR98/Obtainium/releases/download/${tag_name}/app-release.apk`;
+    document.getElementById('downloadArm64').href = `https://github.com/ImranR98/Obtainium/releases/download/${tag_name}/app-arm64-v8a-release.apk`;
+    document.getElementById('downloadArm7').href = `https://github.com/ImranR98/Obtainium/releases/download/${tag_name}/app-armeabi-v7a-release.apk`;
+    document.getElementById('downloadX64').href = `https://github.com/ImranR98/Obtainium/releases/download/${tag_name}/app-x86_64-release.apk`;
+  });
+</script>
+{% endblock %}
