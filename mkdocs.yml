@@ -25,8 +25,7 @@ theme:
     - content.action.edit
     - search.suggest
     - search.highlight
-    - search.share
-    - content.tooltips
+    - navigation.top
     
   icon:
     repo: fontawesome/brands/github
@@ -34,7 +33,6 @@ theme:
 
   palette:
     - primary: deep purple
-    - accent: green
   
 markdown_extensions:
   - admonition
@@ -66,9 +64,6 @@ extra:
     - icon: material/web
       link: https://imranr.dev/
       name: Website
-
-plugins:
-  - search
 
 extra_css:
   - stylesheets/custom.css
