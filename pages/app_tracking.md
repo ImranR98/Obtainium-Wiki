@@ -44,7 +44,7 @@ When Obtainium is tracking an app that is currently installed, it grabs the vers
 
 Obtainium stores a list of "standard" formats which it uses to make this comparison (like `x.y.z` or `x.y`). If both versions being compared conform to the same format, the comparison will be made. If not, version detection will be disabled for that app. In some cases, Obtainium will strip off extra parts from the source string if doing so would result in a standard version (like how `v` and `-beta` are removed from Obtainium's `v0.14.21-beta`), then it can make the comparison. We never try to strip parts off the "real" OS-provided version.
 
-This piece of code defines how the various "standard" formats are generated: https://github.com/ImranR98/Obtainium/blob/main/lib/providers/apps_provider.dart#L64
+[This piece of code](https://github.com/ImranR98/Obtainium/blob/main/lib/providers/apps_provider.dart#L64) defines how the various "standard" formats are generated.
 
 It's always possible to expand that code to add support for more formats, but this requires careful consideration. For example if Android reports that an installed app's version is `1.2` but the source says the latest available version of that app is `1.2-4`, should we strip off the `-4` and say the two are the same (meaning there is no update available)? This may be fine in some contexts (where the `-4` is not actually indicative of a change in the app itself) but not in other contexts. So it wouldn't be a good idea to support that specific case.
 
@@ -55,7 +55,7 @@ Version detection being turned off should not usually have a significant impact 
 
 In such cases, Obtainium would not be able to detect that the app's real OS version has changed and so it would not update its internal records accordingly - you would need to manually correct the inconsistency.
 
-See also: https://github.com/ImranR98/Obtainium/issues/946#issuecomment-1741745587
+See also: [Obtainium Issue #946 Comment](https://github.com/ImranR98/Obtainium/issues/946#issuecomment-1741745587])
 
 ## Background Updates
 
