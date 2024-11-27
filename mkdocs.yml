@@ -5,9 +5,6 @@ docs_dir: pages
 site_author: ImranR98
 edit_uri: https://github.com/ImranR98/Obtainium-Wiki/edit/main/pages/
 
-extra_javascript:
-  - assets/analytics.js
-
 nav:
   - Home: index.md
   - UI Overview: ui_overview.md
@@ -22,28 +19,40 @@ theme:
   favicon: https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/icon_small.png
 
   features:
-    - navigation.instant
-    - navigation.instant.progress
     - content.action.edit
     - search.suggest
     - search.highlight
-    - search.share
-    - content.tooltips
-    
+    - navigation.top
+
   icon:
     repo: fontawesome/brands/github
     annotation: material/arrow-right-circle
 
   palette:
-    - primary: deep purple
-    - accent: green
-  
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/brightness-7
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/brightness-4
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - attr_list
   - md_in_html
-  - attr_list
   - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -68,9 +77,44 @@ extra:
     - icon: material/web
       link: https://imranr.dev/
       name: Website
+  
+  translations:
+    made_by: Made by
+    open_an_issue: Open an Issue
+    crowdsourced_app_configurations: Crowdsourced App Configurations
+    obtainium_website: Obtainium Website
+    made_with: Made with
+    missing_translation: 'This page has not yet been translated. You are viewing the English version.'
+    help_translate: 'Help translate this page'
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: 🇬🇧 English
+          # site_name for English is at the top
+          # site_description for English is at the top
+          # nav_translations for English are under the main nav key
+          # extra translations for English are under the main extra key
+
+        - locale: de
+          name: 🇩🇪 Deutsch
+          site_name: "Obtainium Wiki"
+          site_description: "Hilfeseite für Obtainium"
+          nav_translations:
+            UI Overview: Übersicht User Interface
+            How Apps are Tracked: Wie Apps nachverfolgt werden
+
+        - locale: "null"
+          name: ➕ Add
+          build: false
+          fixed_link: https://github.com/ImranR98/Obtainium-Wiki/blob/main/CONTRIBUTING.md
 
 extra_css:
   - stylesheets/custom.css
+
+extra_javascript:
+  - assets/analytics.js

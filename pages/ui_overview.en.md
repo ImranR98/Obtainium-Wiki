@@ -22,8 +22,9 @@ This page lets you add an app by its source URL.
 As you enter the source URL, Obtainium will automatically detect what [source logic](app_tracking.md/#basics) it should use, and will present the relevant options. If a URL does not correspond to any supported source, the "[HTML](sources.md/#html)" source will be selected as a default. This source is a general fallback that may work in some cases. If you think Obtainium has made the wrong choice, you can manually specify the source type to use.
 
 For most sources, you don't need to be exact with the URL you enter; for example, any GitHub URL that contains the base repo URL would be accepted by the GitHub source (for example, `https://github.com/ImranR98/Obtainium/releases/latest` would automatically be trimmed down to `https://github.com/ImranR98/Obtainium`). However, your URL must be more precise in two situations:
+
 1. When using the HTML source
-   - For example, the Tor Android APK is at `https://www.torproject.org/download/` so entering only `https://www.torproject.org/` would not work.
+      - For example, the Tor Android APK is at `https://www.torproject.org/download/` so entering only `https://www.torproject.org/` would not work.
 2. When manually picking a source (overriding Obtainium's HTML fallback choice)
 
 This page also lets you search for apps across sources that support this feature (the [Import/Export](#importexport-page) page also provides a separate search tool). Note that just because an app shows up in the search results does not mean it will be added successfully - it still needs to fulfill all other criteria.
@@ -40,4 +41,4 @@ The search tool on this page also lets you search sources that require you to sp
 
 ## Settings Page
 
-This page provides various UI and behaviour settings, including the option to enable more functionality for specific sources by adding required credentials.
+This page provides various UI and behaviour settings, including the option to enable more functionality for specific sources by adding required credentials. More information about specific settings is available on the [settings page](settings.md).

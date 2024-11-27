@@ -30,21 +30,28 @@ Note: Many filter settings in Obtainium (including many source-specific optional
 When Obtainium is tracking an app that is currently installed, it grabs the version of the app from Android and compares it to the version string provided by the source. It then compares the two to decide whether an update is available or whether the install status of the app has changed. This comparison can only be made if the two versions follow the same format, which may not always be the case. For example, you could have any of these cases among others:
 
 1. [Obtainium](https://github.com/ImranR98/Obtainium/releases/tag/v0.14.21-beta) from GitHub:
-   - Android-reported app version: `0.14.21`
-   - Source-reported version: `v0.14.21-beta` 
+
+    - **Android-reported app version:** `0.14.21`
+    - **Source-reported version:** `v0.14.21-beta` 
+
 2. [Cheogram](https://git.singpolyma.net/cheogram-android/refs/2.12.8-2) from a SourceHut instance:
-   - Android-reported app version: `2.12.8-2+free`
-   - Source-reported version: `2.12.8-2`
+
+    - **Android-reported app version:** `2.12.8-2+free`
+    - **Source-reported version:** `2.12.8-2`
+
 3. [Tor](https://www.torproject.org/download/) from the Tor website:
-   - Android-reported app version: `102.2.1-Release (12.5.6)`
-   - Source-reported version: none (no version string is provided by this HTML source so a URL hash is used instead as a 'pseudo-version')
+
+    - **Android-reported app version:** `102.2.1-Release (12.5.6)`
+    - **Source-reported version:** none (no version string is provided by this HTML source so a URL hash is used instead as a 'pseudo-version')
+
 4. [Quotable](https://github.com/Lijukay/Qwotable/releases/tag/v10) from GitHub:
-   - Android-reported app version: `1`
-   - Source-reported version: `v10` 
+
+    - **Android-reported app version:** `1`
+    - **Source-reported version:** `v10`
 
 Obtainium stores a list of "standard" formats which it uses to make this comparison (like `x.y.z` or `x.y`). If both versions being compared conform to the same format, the comparison will be made. If not, version detection will be disabled for that app. In some cases, Obtainium will strip off extra parts from the source string if doing so would result in a standard version (like how `v` and `-beta` are removed from Obtainium's `v0.14.21-beta`), then it can make the comparison. We never try to strip parts off the "real" OS-provided version.
 
-This piece of code defines how the various "standard" formats are generated: https://github.com/ImranR98/Obtainium/blob/main/lib/providers/apps_provider.dart#L64
+[This piece of code](https://github.com/ImranR98/Obtainium/blob/main/lib/providers/apps_provider.dart#L64) defines how the various "standard" formats are generated.
 
 It's always possible to expand that code to add support for more formats, but this requires careful consideration. For example if Android reports that an installed app's version is `1.2` but the source says the latest available version of that app is `1.2-4`, should we strip off the `-4` and say the two are the same (meaning there is no update available)? This may be fine in some contexts (where the `-4` is not actually indicative of a change in the app itself) but not in other contexts. So it wouldn't be a good idea to support that specific case.
 
@@ -55,7 +62,7 @@ Version detection being turned off should not usually have a significant impact 
 
 In such cases, Obtainium would not be able to detect that the app's real OS version has changed and so it would not update its internal records accordingly - you would need to manually correct the inconsistency.
 
-See also: https://github.com/ImranR98/Obtainium/issues/946#issuecomment-1741745587
+See also: [Obtainium Issue #946 Comment](https://github.com/ImranR98/Obtainium/issues/946#issuecomment-1741745587])
 
 ## Background Updates
 

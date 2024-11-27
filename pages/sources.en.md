@@ -19,6 +19,33 @@ The following options are available for all apps regardless of source:
 
 Aside from those, each app has additional source-specific options. Most of those are self-explanatory and may be updated frequently, so they are not covered in this Wiki. However, some sources do have more unique behaviours that need more explanation, and these are covered below.
 
+## Currently supported App sources
+
+- Open Source - General:
+    - [GitHub](https://github.com/)
+    - [GitLab](https://gitlab.com/)
+    - [Forgejo](https://forgejo.org/) ([Codeberg](https://codeberg.org/))
+    - [F-Droid](https://f-droid.org/)
+    - Third Party F-Droid Repos
+    - [IzzyOnDroid](https://android.izzysoft.de/)
+    - [SourceHut](https://git.sr.ht/)
+- Other - General:
+    - [APKPure](https://apkpure.net/)
+    - [Aptoide](https://aptoide.com/)
+    - [Uptodown](https://uptodown.com/)
+    - [Huawei AppGallery](https://appgallery.huawei.com/)
+    - [Tencent App Store](https://sj.qq.com/)
+    - Jenkins Jobs
+    - [APKMirror](https://apkmirror.com/) (Track-Only)
+- Open Source - App-Specific:
+    - [VLC](https://videolan.org/)
+- Other - App-Specific:
+    - [WhatsApp](https://whatsapp.com)
+    - [Telegram App](https://telegram.org)
+    - [Neutron Code](https://neutroncode.com)
+- Direct APK Link
+- "HTML" (Fallback): Any other URL that returns an HTML page with links to APK files
+
 ## GitHub
 
 GitHub puts a cap on the number of API requests you can make in a given period of time. Since Obtainium uses the GitHub API to grab release info, you may run into a "rate limit" error if you have more than a few dozen GitHub apps. You can get around this by following [these instructions](settings.md/#__tabbed_1_1).
