@@ -41,4 +41,4 @@ The search tool on this page also lets you search sources that require you to sp
 
 ## Settings Page
 
-This page provides various UI and behaviour settings, including the option to enable more functionality for specific sources by adding required credentials. More information about specific settings is available on the [settings page](settings.md).
+This page provides various UI and behaviour settings, including the option to enable more functionality for specific sources by adding required credentials.

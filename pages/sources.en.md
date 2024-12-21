@@ -37,10 +37,8 @@ Aside from those, each app has additional source-specific options. Most of those
     - [Tencent App Store](https://sj.qq.com/)
     - Jenkins Jobs
     - [APKMirror](https://apkmirror.com/) (Track-Only)
-- Open Source - App-Specific:
+- App-Specific:
     - [VLC](https://videolan.org/)
-- Other - App-Specific:
-    - [WhatsApp](https://whatsapp.com)
     - [Telegram App](https://telegram.org)
     - [Neutron Code](https://neutroncode.com)
 - Direct APK Link
@@ -48,15 +46,50 @@ Aside from those, each app has additional source-specific options. Most of those
 
 ## GitHub
 
-GitHub puts a cap on the number of API requests you can make in a given period of time. Since Obtainium uses the GitHub API to grab release info, you may run into a "rate limit" error if you have more than a few dozen GitHub apps. You can get around this by following [these instructions](settings.md/#__tabbed_1_1).
+GitHub puts a cap on the number of API requests you can make in a given period of time. Since Obtainium uses the GitHub API to grab release info, you may run into a "rate limit" error if you have more than a few dozen GitHub apps. You can get around this by getting a Personal Access Token.
 
 GitHub also allows developers to host multiple releases of their app. This usually means older versions of the same app, but may also include pre-releases, variants, etc. - so Obtainium provides various filters that let you navigate this and grab the exact releases you are interested in.
 
+### Creating a GitHub Personal Access Token
+
+1. Login to [GitHub](https://github.com).
+
+2. Go to the [Fine-grained tokens](https://github.com/settings/tokens?type=beta) section in developer settings.
+
+3. Select **Generate new token**.
+
+4. Give your token name and set an expiry date.
+
+5. Scroll to the bottom and select **Generate token**.
+
+6. Copy the token and paste it into the Obtainium settings. Make sure to copy your token now as you will not be able to see it again.
+
 ## GitLab
 
-GitLab releases sometimes contain APKs that are attached in non-standard ways, such that Obtainium cannot get to them easily. To fix this, follow [these instructions](settings.md/#__tabbed_1_2).
+GitLab releases sometimes contain APKs that are attached in non-standard ways, such that Obtainium cannot get to them easily. The GitLab API provides a far more reliable way to extract APKs but it cannot be used without an API key. While this shouldn't be an issue for most GitLab repos, you can add your own Personal Access Token in Obtainium's settings for more reliable APK extraction in edge cases where it does turn out to be a problem.
 
 Just like GitHub, GitLab also allows developers to host older releases of the same app, so additional options are provided as appropriate.
+
+### Creating a GitLab Personal Access Token
+
+
+1. Login to [GitLab](https://github.com).
+
+2. Go to the [personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens) section in settings.
+
+3. Select **Add new token**.
+
+4. Give your token name and set an expiration date.
+
+5. Tick the `read_api` box.
+
+6. Scroll to the bottom and select **Create personal access token**.
+
+7. Copy the token and paste it into the Obtainium settings. Make sure to copy your token now as you will not be able to see it again.
+
+!!! info "When is this needed?"
+    See [this explanation](https://github.com/ImranR98/Obtainium/issues/3#issuecomment-1234695412) about non-standard APK attachments in GitLab releases
+
 
 ## F-Droid Third Party Repo
 
